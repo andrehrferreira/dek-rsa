@@ -5,7 +5,7 @@
     "main": "./build/index.js",
     "scripts": {
         "test": "mocha",
-        "sample": "npm run build && babel-node sample --presets env",
+        "dev": "npm run build && babel-node sample --presets env",
         "build": "babel src -s -D -d build --presets env"
     },
     "repository": {

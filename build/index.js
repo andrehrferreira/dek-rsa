@@ -43,9 +43,11 @@ exports.default = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(functi
                             _fs2.default.writeFileSync(_path2.default.join(process.cwd(), "application.key"), key.exportKey("pkcs8-private-pem"));
                         }
 
+                        if (process.env.DEBUG == 'true') console.log("[ RSA ] - RSA successfully signed");
+
                         _scope.$.set("rsa", key);
                     } catch (e) {
-                        console.log("[ RSA Plugin ] - " + e.message);
+                        console.log("[ RSA ] - " + e.message);
                         reject();
                     }
 

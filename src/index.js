@@ -17,10 +17,13 @@ export default async () => {
             fs.writeFileSync(path.join(process.cwd(), "application.key"), key.exportKey("pkcs8-private-pem"));
         }
 
+        if(process.env.DEBUG == 'true')
+            console.log(`[ RSA ] - RSA successfully signed`);
+
         $.set("rsa", key);
     }
     catch(e){
-        console.log(`[ RSA Plugin ] - ${e.message}`);
+        console.log(`[ RSA ] - ${e.message}`);
         reject();
     }
 }
